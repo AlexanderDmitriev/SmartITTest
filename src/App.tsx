@@ -1,11 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { useGetAllDataQuery } from './redux/userData';
 
 function App() {
+  const dispatch = useDispatch();
+  const { data }:any = useGetAllDataQuery();
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
