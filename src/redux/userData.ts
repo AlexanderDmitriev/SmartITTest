@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { v4 as uuidv4 } from 'uuid';
 import { BASIC_URL } from '../api/basicData';
+import { IUserData } from '../interfaces/IUserData';
 
 export const userDataApi = createApi({
     reducerPath: 'userData',
@@ -9,13 +10,13 @@ export const userDataApi = createApi({
     }),
     tagTypes: ['Data'],
     endpoints: builder => ({
-      getAllData: builder.query({
-        query: () => `/posts`,
+      getAllData: builder.query<IUserData[],void>({
+        query: () => `/users`,
         providesTags: ['Data'],
       }),
       createData: builder.mutation({
         query: ({title,body}) => ({
-          url: `/posts`,
+          url: `/users`,
           method: 'POST',
           body: JSON.stringify({
             title: title,
@@ -27,7 +28,7 @@ export const userDataApi = createApi({
       }),
       updateData: builder.mutation({
         query: ({id,title,body}) => ({
-          url: `/posts/${id}`,
+          url: `/users/${id}`,
           method: 'PUT',
           body: JSON.stringify({
             title: title,
@@ -39,7 +40,7 @@ export const userDataApi = createApi({
       }),
       deleteData: builder.mutation({
         query: id => ({
-          url: `/posts/${id}`,
+          url: `/users/${id}`,
           method: 'DELETE',
          
         }), invalidatesTags: ['Data'],

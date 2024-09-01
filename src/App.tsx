@@ -1,10 +1,13 @@
 import './App.css';
-import { useSelector, useDispatch } from 'react-redux';
 import { useGetAllDataQuery } from './redux/userData';
 
 function App() {
-  const dispatch = useDispatch();
-  const { data }:any = useGetAllDataQuery();
+  const  {data/* , isFetching,isSuccess */}  = useGetAllDataQuery();
+  console.log(data);
+  /* fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => response.json())
+    .then(json => console.log(json)); */
+
 
   return (
     <div className="App">

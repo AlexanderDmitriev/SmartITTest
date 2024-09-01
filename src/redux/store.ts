@@ -11,5 +11,5 @@ export const store = configureStore({
     getDefaultMiddleware().concat(userDataApi.middleware),
 });
 
-export type RootState = ReturnType<typeof store.getState>
-export type AppDispatch = typeof store.dispatch
+//export type RootState = ReturnType<typeof store.getState>
+//export type AppDispatch = typeof store.dispatch
