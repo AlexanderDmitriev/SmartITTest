@@ -2,10 +2,10 @@ import './App.css';
 import { TableHead } from './entities/table/TableHead';
 import { TableRow } from './entities/table/TableRow';
 import { userDataApi } from './redux/userData';
+import { Filter } from './entities/Filter/Filter';
 
 function App() {
   const { data, isFetching /*isSuccess */ } = userDataApi.useGetAllDataQuery();
-  console.log(data);
   /* fetch('https://jsonplaceholder.typicode.com/users')
     .then(response => response.json())
     .then(json => console.log(json)); */
@@ -29,6 +29,7 @@ function App() {
       </header>
       <main>
         <h1>User information - SmartIT</h1>
+        <Filter/>
         <table>
           <TableHead />
           <tbody>
