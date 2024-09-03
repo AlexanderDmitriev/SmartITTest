@@ -1,14 +1,14 @@
-export const Filter = () => {
+export const Filter = ({changeFilter}:any) => {
   return (
     <>
       <form action="">
         <label htmlFor="filter">
           <span>Filter</span>
-          <input type="text" id="filter" />
+          <input type="text" id="filter" onChange={changeFilter} />
         </label>
         <p>Choose parameter</p>
         <label htmlFor="name">
-          <input type="radio" name="parameter" value="name" id="name" />
+          <input type="radio" name="parameter" value="name" id="name" defaultChecked />
           name
         </label>
         <label htmlFor="username">
