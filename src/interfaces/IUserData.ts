@@ -4,4 +4,5 @@ export interface IUserData {
     name: string;
     username: string;
     phone: string;
+    [key:string]:any;
   }

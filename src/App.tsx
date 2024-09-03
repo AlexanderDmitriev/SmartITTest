@@ -8,8 +8,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { IFilter } from './interfaces/IFilter';
 import { filterData } from './redux/filter';
 import { IUserData } from './interfaces/IUserData';
+import { useState } from 'react';
 
 function App() {
+  const [parameter, setParameter] = useState('name');
   const { data, isFetching /*isSuccess */ } = userDataApi.useGetAllDataQuery();
   const dispatch = useDispatch();
 
@@ -19,20 +21,20 @@ function App() {
     (state: IFilter) => state.filter.value
   );
 
+  const handleParameter = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setParameter(event.target.value);
+  };
+
   let visibleData: IUserData[] = [];
   if (showData) {
     visibleData = data.filter(item =>
-      item.name.toLowerCase().includes(filter)
+      item[parameter].toLowerCase().includes(filter)
     );
   }
 
   const changeFilter = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    console.log(visibleData)
     dispatch(filterData(event.currentTarget.value));
   };
-  
-
-  
 
   return (
     <div className="App">
@@ -51,7 +53,7 @@ function App() {
       </header>
       <main>
         <h1>User information - SmartIT</h1>
-        <Filter changeFilter={changeFilter} />
+        <Filter changeFilter={changeFilter} handleParameter={handleParameter} />
         <table>
           <TableHead />
           <tbody>
