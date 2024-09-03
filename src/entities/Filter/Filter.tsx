@@ -1,5 +1,9 @@
-export const Filter = ({ changeFilter,handleParameter }: any) => {
+import { IOnChangeFilter } from '../../interfaces/IOnChangeFilter';
 
+export const Filter: React.FC<IOnChangeFilter> = ({
+  changeFilter,
+  handleParameter,
+}) => {
   return (
     <>
       <form action="">
