@@ -19,10 +19,7 @@ function App() {
     (state: IFilter) => state.filter.value
   );
 
-  const handleParameter = (
-    event: React.ChangeEvent<HTMLInputElement>,
-    checked: boolean
-  ) => {
+  const handleParameter = (event: React.ChangeEvent<any>, checked: boolean) => {
     setParameter(event.target.value);
   };
 

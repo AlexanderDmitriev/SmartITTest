@@ -5,10 +5,10 @@ import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 
 export interface IRadiobutton {
-    handleParameter: (event: React.ChangeEvent<HTMLInputElement>, checked: boolean) => void;
+    handleParameter: (event: React.SyntheticEvent<Element, Event>, checked: boolean) => void;
   }
 
-export const FilterRadioGroup = ({handleParameter}:any) => {
+export const FilterRadioGroup: React.FC<IRadiobutton> = ({handleParameter}) => {
     
   return (
     <FormControl>
