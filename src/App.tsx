@@ -19,7 +19,10 @@ function App() {
     (state: IFilter) => state.filter.value
   );
 
-  const handleParameter = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleParameter = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    checked: boolean
+  ) => {
     setParameter(event.target.value);
   };
 
@@ -37,7 +40,7 @@ function App() {
   return (
     <div className="App">
       <main>
-        <h1 className='Title'>User information - SmartIT</h1>
+        <h1 className="Title">User information - SmartIT</h1>
         <Filter changeFilter={changeFilter} handleParameter={handleParameter} />
         {showData && <TableData visibleData={visibleData} />}
       </main>
