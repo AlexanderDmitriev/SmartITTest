@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/SmartITTest/static/css/main.bba44b4d.css",
+    "main.js": "/SmartITTest/static/js/main.0b309b12.js",
+    "index.html": "/SmartITTest/index.html",
+    "main.bba44b4d.css.map": "/SmartITTest/static/css/main.bba44b4d.css.map",
+    "main.0b309b12.js.map": "/SmartITTest/static/js/main.0b309b12.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bba44b4d.css",
+    "static/js/main.0b309b12.js"
+  ]
+}

@@ -10,7 +10,7 @@ import { TableData } from './entities/table/TableData';
 
 function App() {
   const [parameter, setParameter] = useState('name');
-  const { data, isFetching /*isSuccess */ } = userDataApi.useGetAllDataQuery();
+  const { data, isFetching } = userDataApi.useGetAllDataQuery();
   const dispatch = useDispatch();
 
   const showData = data && !isFetching;
