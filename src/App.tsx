@@ -9,6 +9,7 @@ import { IFilter } from './interfaces/IFilter';
 import { filterData } from './redux/filter';
 import { IUserData } from './interfaces/IUserData';
 import { useState } from 'react';
+import { TableData } from './entities/table/TableData';
 
 function App() {
   const [parameter, setParameter] = useState('name');
@@ -57,6 +58,8 @@ function App() {
               ))}
           </tbody>
         </table>
+        {showData &&
+          <TableData visibleData={visibleData} />}
       </main>
     </div>
   );
